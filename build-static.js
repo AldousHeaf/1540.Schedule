@@ -49,7 +49,10 @@ async function main() {
   await fs.rm(DOCS, { recursive: true }).catch(() => {});
   await fs.mkdir(DOCS, { recursive: true });
 
-  await fs.writeFile(path.join(DOCS, 'schedule.json'), JSON.stringify({ days }));
+  await fs.writeFile(
+    path.join(DOCS, 'schedule.json'),
+    JSON.stringify({ days, builtAt: new Date().toISOString() })
+  );
   await fs.copyFile(path.join(ROOT, 'public', 'index.html'), path.join(DOCS, 'index.html'));
   await fs.copyFile(path.join(ROOT, 'public', 'schedule.js'), path.join(DOCS, 'schedule.js'));
   await fs.copyFile(path.join(ROOT, 'public', 'styles.css'), path.join(DOCS, 'styles.css'));
