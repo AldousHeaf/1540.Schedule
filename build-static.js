@@ -51,7 +51,11 @@ async function main() {
 
   await fs.writeFile(
     path.join(DOCS, 'schedule.json'),
-    JSON.stringify({ days, builtAt: new Date().toISOString() })
+    JSON.stringify({
+      days,
+      blockDurationMinutes: config.blockDurationMinutes || 30,
+      builtAt: new Date().toISOString(),
+    })
   );
   await fs.copyFile(path.join(ROOT, 'public', 'index.html'), path.join(DOCS, 'index.html'));
   await fs.copyFile(path.join(ROOT, 'public', 'schedule.js'), path.join(DOCS, 'schedule.js'));

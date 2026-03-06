@@ -102,6 +102,8 @@ async function loadSchedule() {
       return;
     }
     scheduleDays = days;
+    const blockMins = Number(data.blockDurationMinutes) || 30;
+    const hoursPerBlock = blockMins / 60;
     if (window.location.hostname.includes('github.io')) {
       const btn = document.getElementById('regenerateBtn');
       if (btn) btn.style.display = 'none';
@@ -228,18 +230,18 @@ async function loadSchedule() {
         checkThead.innerHTML = '<tr><th class="col-name">Name</th><th>Scouting hours</th><th>Hours in pits</th><th>Status</th></tr>';
         checkTable.appendChild(checkThead);
         const checkTbody = document.createElement('tbody');
-        const pitRoles = ['Pits', 'Ctrls Pit', 'Pit Lead'];
+        const pitRoles = ['Pits', 'Ctrls Pit', 'Pit Lead', 'Mech Pit'];
         day.scoutCheck.forEach((row) => {
           const person = (day.people || []).find((p) => p.name === row.name);
           const pitBlocks = person ? (person.schedule || []).filter((s) => pitRoles.includes(s)).length : 0;
-          const hoursInPits = (pitBlocks * 0.5).toFixed(1);
+          const hoursInPits = (pitBlocks * hoursPerBlock).toFixed(1);
           const tr = document.createElement('tr');
           tr.className = 'scout-check--' + row.status;
           tr.innerHTML =
             '<td class="col-name">' +
             escapeHtml(row.name) +
             '</td><td>' +
-            (row.scoutingBlocks * 0.5).toFixed(1) + ' hr</td><td>' +
+            (row.scoutingBlocks * hoursPerBlock).toFixed(1) + ' hr</td><td>' +
             hoursInPits + ' hr</td><td>' +
             escapeHtml(row.status === 'exempt' ? 'Exempt' : row.status === 'none' ? 'No scouting' : row.status === 'low' ? 'Low' : 'OK') +
             '</td>';
