@@ -2,13 +2,13 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const ROLES = ['Drive', 'Mech Pit', 'Ctrls Pit', 'Pit Lead', 'Journalist', 'Strategy', 'Media'];
-const PIT_LEAD_NAMES = ['Audrey Tsai', 'Zachary Rutman'];
+const PIT_LEAD_NAMES = ['Audrey Tsai', 'Zachary Rutman']; // Both Pit Lead all day (not Mech Pit)
 const SCOUT_START_MINUTES = 11 * 60; // Scouting starts at 11:00
 const CANNOT_SCOUT_NAMES = [];
 const NO_MECH_PIT_NAMES = ['Zachary Rutman', 'Audrey Tsai'];
-const NO_CTRLS_PIT_NAMES = ['Sienna Cooper', 'Zachary Rutman'];
+const NO_CTRLS_PIT_NAMES = ['Sienna Cooper', 'Zachary Rutman', 'Brian Chai', 'James Rubenstein', 'Maddox Gumboc'];
 const NO_STRATEGY_NAMES = ['Brian Chai', 'Miranda'];
-const ALLOW_MECH_PIT_NAMES = ['Miranda', 'Blaze Annison', 'James Rubenstein', 'Maddox Gumboc'];
+const ALLOW_MECH_PIT_NAMES = ['Miranda', 'Blaze Annison'];
 const EXCLUDED_FROM_SCHEDULE_NAMES = ['Mia Yasukawa'];
 
 function seededRandom(seed) {
@@ -319,7 +319,8 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes) {
     assignUpTo('Mech Pit', mechMax, (_, p) => {
       if (NO_MECH_PIT_NAMES.includes(p.name)) return false;
       const sub = submissions.find((s) => s.email === p.email);
-      return sub && (sub.wantsPits && sub.wantsMechPit || sub.wantsSwPit || ALLOW_MECH_PIT_NAMES.includes(p.name));
+      const canMech = sub && (sub.wantsPits && sub.wantsMechPit || sub.wantsSwPit || ALLOW_MECH_PIT_NAMES.includes(p.name));
+      return canMech;
     }, true, true);
 
     assignUpTo('Ctrls Pit', Math.max(0, getMax('Ctrls Pit', timeIdx)), (_, p) => canCtrlsPit(p), true, true);
