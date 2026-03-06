@@ -1,27 +1,13 @@
 let scheduleDays = [];
 
-function showLoadingScreen() {
-  const el = document.getElementById('loadingScreen');
-  if (el) el.classList.remove('hidden');
-}
-function hideLoadingScreen() {
-  const el = document.getElementById('loadingScreen');
-  if (el) el.classList.add('hidden');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  showLoadingScreen();
   loadSchedule();
   const btn = document.getElementById('regenerateBtn');
   if (btn) btn.addEventListener('click', async () => {
     btn.disabled = true;
-    showLoadingScreen();
     try {
       const res = await fetch('/api/regenerate');
       if (res.ok) await loadSchedule();
-      else hideLoadingScreen();
-    } catch (_) {
-      hideLoadingScreen();
     } finally {
       btn.disabled = false;
       btn.textContent = 'Regenerate';
@@ -93,33 +79,33 @@ function escapeHtml(s) {
 
 async function loadSchedule() {
   const container = document.getElementById('scheduleContainer');
-  let data = null;
+  const timeoutMs = 20000;
   try {
-    const res = await fetch('/api/schedule');
-    if (res.ok) data = await res.json();
-  } catch (_) {}
-  if (!data) {
+    let data = null;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
     try {
-      const res = await fetch('schedule.json');
+      const res = await fetch('/api/schedule', { signal: controller.signal });
+      clearTimeout(timeoutId);
       if (res.ok) data = await res.json();
-    } catch (_) {}
-  }
-  if (!data) {
-    hideLoadingScreen();
-    container.innerHTML = '<div class="empty">No schedule loaded.</div>';
-    return;
-  }
-  if (data.useCachedSchedule || window.location.hostname.includes('github.io')) {
-    const btn = document.getElementById('regenerateBtn');
-    if (btn) btn.style.display = 'none';
-  }
-  const days = data.days || (data.schedule && data.schedule.days) || [];
+    } catch (_) {
+      clearTimeout(timeoutId);
+    }
+    if (!data) {
+      const staticRes = await fetch('schedule.json');
+      if (staticRes.ok) data = await staticRes.json();
+    }
+    if (!data) throw new Error('Failed to load');
+    const days = data.days || (data.schedule && data.schedule.days) || [];
     if (!days.length) {
-      hideLoadingScreen();
       container.innerHTML = '<div class="empty">No schedule. Check CSV path in config and regenerate.</div>';
       return;
     }
     scheduleDays = days;
+    if (window.location.hostname.includes('github.io')) {
+      const btn = document.getElementById('regenerateBtn');
+      if (btn) btn.style.display = 'none';
+    }
     container.innerHTML = '';
     const daysToShow = days.filter((d) => (d.label || '').toLowerCase() !== 'saturday');
     daysToShow.forEach((day, dayIndex) => {
@@ -268,9 +254,11 @@ async function loadSchedule() {
 
       container.appendChild(section);
     });
-    hideLoadingScreen();
   } catch (e) {
-    hideLoadingScreen();
-    container.innerHTML = '<div class="empty">Error loading schedule: ' + escapeHtml(e.message) + '</div>';
+    const isTimeout = e.name === 'AbortError';
+    const msg = isTimeout
+      ? 'Schedule is taking a while. If the server is still building, try refreshing in a moment.'
+      : 'Error loading schedule: ' + escapeHtml(e.message);
+    container.innerHTML = '<div class="empty">' + msg + '</div>';
   }
 }

@@ -4,7 +4,8 @@
   "description": "FRC Team 1540 Competition Schedule Organizer",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node build-static.js"
   },
   "dependencies": {
     "express": "^4.18.2"

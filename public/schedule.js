@@ -81,18 +81,31 @@ async function loadSchedule() {
   const container = document.getElementById('scheduleContainer');
   const timeoutMs = 20000;
   try {
+    let data = null;
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-    const res = await fetch('/api/schedule', { signal: controller.signal });
-    clearTimeout(timeoutId);
-    if (!res.ok) throw new Error(res.statusText || 'Failed to load');
-    const data = await res.json();
+    try {
+      const res = await fetch('/api/schedule', { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) data = await res.json();
+    } catch (_) {
+      clearTimeout(timeoutId);
+    }
+    if (!data) {
+      const staticRes = await fetch('schedule.json');
+      if (staticRes.ok) data = await staticRes.json();
+    }
+    if (!data) throw new Error('Failed to load');
     const days = data.days || (data.schedule && data.schedule.days) || [];
     if (!days.length) {
       container.innerHTML = '<div class="empty">No schedule. Check CSV path in config and regenerate.</div>';
       return;
     }
     scheduleDays = days;
+    if (window.location.hostname.includes('github.io')) {
+      const btn = document.getElementById('regenerateBtn');
+      if (btn) btn.style.display = 'none';
+    }
     container.innerHTML = '';
     const daysToShow = days.filter((d) => (d.label || '').toLowerCase() !== 'saturday');
     daysToShow.forEach((day, dayIndex) => {
