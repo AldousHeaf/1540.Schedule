@@ -1,13 +1,27 @@
 let scheduleDays = [];
 
+function showLoadingScreen() {
+  const el = document.getElementById('loadingScreen');
+  if (el) el.classList.remove('hidden');
+}
+function hideLoadingScreen() {
+  const el = document.getElementById('loadingScreen');
+  if (el) el.classList.add('hidden');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  showLoadingScreen();
   loadSchedule();
   const btn = document.getElementById('regenerateBtn');
   if (btn) btn.addEventListener('click', async () => {
     btn.disabled = true;
+    showLoadingScreen();
     try {
       const res = await fetch('/api/regenerate');
       if (res.ok) await loadSchedule();
+      else hideLoadingScreen();
+    } catch (_) {
+      hideLoadingScreen();
     } finally {
       btn.disabled = false;
       btn.textContent = 'Regenerate';
@@ -85,6 +99,7 @@ async function loadSchedule() {
     const data = await res.json();
     const days = data.days || (data.schedule && data.schedule.days) || [];
     if (!days.length) {
+      hideLoadingScreen();
       container.innerHTML = '<div class="empty">No schedule. Check CSV path in config and regenerate.</div>';
       return;
     }
@@ -237,7 +252,9 @@ async function loadSchedule() {
 
       container.appendChild(section);
     });
+    hideLoadingScreen();
   } catch (e) {
+    hideLoadingScreen();
     container.innerHTML = '<div class="empty">Error loading schedule: ' + escapeHtml(e.message) + '</div>';
   }
 }

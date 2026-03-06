@@ -6,7 +6,7 @@ module.exports = {
   competitionEndTime: '20:30',
   blockDurationMinutes: 30,
   numberOfDays: 2,
-  optimizationIterations: 4000,
+  optimizationIterations: 1,
   columnMap: {
     email: 'Email Address',
     driveTeam: 'Driveteam',
