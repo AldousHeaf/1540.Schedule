@@ -3,7 +3,7 @@ const path = require('path');
 
 const ROLES = ['Drive', 'Pits', 'Ctrls Pit', 'Pit Lead', 'Journalist', 'Strategy', 'Media'];
 const PIT_LEAD_NAMES = ['Audrey Tsai', 'Zachary Rutman']; // Both Pit Lead all day (not Pits)
-const SCOUT_START_MINUTES = 11 * 60; // Scouting starts at 11:00
+const SCOUT_START_MINUTES = 9 * 60; // Scouting starts at 09:00 (all day except lunch)
 const CANNOT_SCOUT_NAMES = [];
 const NO_MECH_PIT_NAMES = ['Zachary Rutman', 'Audrey Tsai'];
 const NO_CTRLS_PIT_NAMES = ['Sienna Cooper', 'Zachary Rutman', 'Brian Chai', 'James Rubenstein', 'Maddox Gumboc', 'Blaze Annison'];
@@ -409,7 +409,12 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
   };
   const eligibleForScout = (p) => !cannotScoutPerson(p);
   const scoutAvailablePerBlock = [];
+  const lunchBlockSet = new Set();
   for (let t = 0; t < numBlocks; t++) {
+    const blockStartMin = blockStartMinutes(timeBlocks[t]);
+    const isLunch = lunchStartMin != null && lunchEndMin != null &&
+      blockStartMin >= lunchStartMin && blockStartMin + blockDurationMinutes <= lunchEndMin;
+    if (isLunch) lunchBlockSet.add(t);
     const openNow = people.filter((p) => {
       if (p.schedule[t] !== 'Open') return false;
       const sub = submissions.find((s) => s.email === p.email);
@@ -418,13 +423,16 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     });
     scoutAvailablePerBlock.push(openNow.filter(eligibleForScout).length);
   }
+  const nonLunchAvailable = scoutAvailablePerBlock
+    .map((n, t) => lunchBlockSet.has(t) ? Infinity : n);
   const consistentScoutTarget = Math.min(
     MAX_SCOUTS,
-    Math.max(MIN_SCOUTS, Math.min(...scoutAvailablePerBlock))
+    Math.max(MIN_SCOUTS, Math.min(...nonLunchAvailable))
   );
 
   for (let timeIdx = 0; timeIdx < numBlocks; timeIdx++) {
-    if (blockStartMinutes(timeBlocks[timeIdx]) < SCOUT_START_MINUTES) continue; // Scouting starts at 11:00
+    if (blockStartMinutes(timeBlocks[timeIdx]) < SCOUT_START_MINUTES) continue;
+    if (lunchBlockSet.has(timeIdx)) continue; // No scouts during lunch
     const openNow = people.filter((p) => {
       if (p.schedule[timeIdx] !== 'Open') return false;
       const sub = submissions.find((s) => s.email === p.email);
@@ -475,7 +483,8 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
         const step = MAX_CONSECUTIVE_OPEN + 1;
         for (let k = 1; k < runLen; k += step) {
           const idx = b + k;
-          if (blockStartMinutes(timeBlocks[idx]) < SCOUT_START_MINUTES) continue; // Scouting starts at 11:00
+          if (blockStartMinutes(timeBlocks[idx]) < SCOUT_START_MINUTES) continue;
+          if (lunchBlockSet.has(idx)) continue; // No scouts during lunch
           const scoutCount = people.filter((q) => q.schedule[idx] === 'Scouting!').length;
           if (scoutCount < MAX_SCOUTS) {
             p.schedule[idx] = 'Scouting!';
