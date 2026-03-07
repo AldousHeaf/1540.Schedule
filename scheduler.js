@@ -4,7 +4,8 @@ const path = require('path');
 const ROLES = ['Drive', 'Pits', 'Pit Lead', 'Journalist', 'Strategy', 'Media'];
 const PIT_LEAD_NAMES = ['Audrey Tsai', 'Zachary Rutman']; // Both Pit Lead all day (not Pits)
 const SCOUT_START_MINUTES = 9 * 60; // Scouting starts at 09:00 (all day except lunch)
-const CANNOT_SCOUT_NAMES = [];
+const CANNOT_SCOUT_NAMES = ['Crow Jahncke', 'Quinn Bartlo', 'Autumn Wilkes', 'Azalea Colburn']; // main strategy – no scouting
+const PIT_PAIR_NAMES = ['Joseph Cole', 'Aldous Heaf']; // same schedule; together in Pits = 2
 const NO_MECH_PIT_NAMES = ['Zachary Rutman', 'Audrey Tsai'];
 const NO_CTRLS_PIT_NAMES = ['Sienna Cooper', 'Zachary Rutman', 'Brian Chai', 'James Rubenstein', 'Maddox Gumboc', 'Blaze Annison'];
 const NO_STRATEGY_NAMES = ['Brian Chai', 'Miranda'];
@@ -293,7 +294,7 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
       if (timeIdx <= 0 || p.schedule[timeIdx - 1] !== r) return false;
       return runLengthAtPrev(p, r) < 2;
     };
-    const assignUpTo = (role, maxN, preferOrOnlyIf, spread = true, onlyIf = false, pairFirst = null) => {
+    const assignUpTo = (role, maxN, preferOrOnlyIf, spread = true, onlyIf = false, pairFirst = null, assignPair = false) => {
       let n = 0;
       let available = getAvailable();
       if (preferOrOnlyIf) {
@@ -325,8 +326,17 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
       }
       available.forEach((p) => {
         if (n >= maxN) return;
+        if (p.schedule[timeIdx] !== 'Open') return;
+        const otherOfPair = assignPair && PIT_PAIR_NAMES.includes(p.name)
+          ? people.find((q) => q !== p && PIT_PAIR_NAMES.includes(q.name))
+          : null;
+        const assignBoth = otherOfPair && otherOfPair.schedule[timeIdx] === 'Open' && (n + 2) <= maxN;
         p.schedule[timeIdx] = role;
         n++;
+        if (assignBoth) {
+          otherOfPair.schedule[timeIdx] = role;
+          n++;
+        }
       });
     };
 
@@ -352,7 +362,7 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
       const sub = submissions.find((s) => s.email === p.email);
       const canMech = sub && (sub.wantsPits && sub.wantsMechPit || sub.wantsSwPit || ALLOW_MECH_PIT_NAMES.includes(p.name));
       return canMech || canCtrlsPit(p);
-    }, true, true, ['Joseph Cole', 'Aldous Heaf']);
+    }, true, true, ['Joseph Cole', 'Aldous Heaf'], true);
 
     const isPitLead = (p) => PIT_LEAD_NAMES.includes(p.name);
     const pitLeadMax = Math.max(0, getMax('Pit Lead', timeIdx));
@@ -370,6 +380,7 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     const jMax = Math.max(0, getMax('Journalist', timeIdx));
     if (jMax >= 1) {
       assignUpTo('Journalist', Math.max(jMin, jMax), (_, p) => {
+        if (PIT_PAIR_NAMES.includes(p.name)) return false;
         const sub = submissions.find((s) => s.email === p.email);
         return sub && sub.wantsJournalism;
       }, true, true);
@@ -386,12 +397,13 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
       if (NO_STRATEGY_NAMES.includes(p.name)) return false;
       const sub = submissions.find((s) => s.email === p.email);
       return sub && sub.wantsStrategy;
-    }, true, true);
+    }, true, true, null, true);
 
     const mMin = Math.max(0, getMin('Media', timeIdx));
     const mMax = Math.max(0, getMax('Media', timeIdx));
     if (mMax >= 1) {
       assignUpTo('Media', Math.max(mMin, mMax), (_, p) => {
+        if (PIT_PAIR_NAMES.includes(p.name)) return false;
         const sub = submissions.find((s) => s.email === p.email);
         return sub && sub.wantsMedia;
       }, true, true);
@@ -452,6 +464,9 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     const preferExtendScout = (p) =>
       timeIdx > 0 && p.schedule[timeIdx - 1] === 'Scouting!' && scoutRunLengthAtPrev(p) < 2;
     canScoutRemaining.sort((a, b) => {
+      const aPair = PIT_PAIR_NAMES.includes(a.name) ? 0 : 1;
+      const bPair = PIT_PAIR_NAMES.includes(b.name) ? 0 : 1;
+      if (aPair !== bPair) return aPair - bPair; // pair first
       const aExtend = preferExtendScout(a) ? 1 : 0;
       const bExtend = preferExtendScout(b) ? 1 : 0;
       if (aExtend !== bExtend) return bExtend - aExtend;
@@ -461,8 +476,17 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     let n = 0;
     canScoutRemaining.forEach((p) => {
       if (n >= target) return;
+      if (p.schedule[timeIdx] !== 'Open') return;
+      const otherOfPair = PIT_PAIR_NAMES.includes(p.name)
+        ? people.find((q) => q !== p && PIT_PAIR_NAMES.includes(q.name))
+        : null;
+      const assignBoth = otherOfPair && otherOfPair.schedule[timeIdx] === 'Open' && (n + 2) <= target;
       p.schedule[timeIdx] = 'Scouting!';
       n++;
+      if (assignBoth) {
+        otherOfPair.schedule[timeIdx] = 'Scouting!';
+        n++;
+      }
     });
   }
 
@@ -486,6 +510,10 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
           const scoutCount = people.filter((q) => q.schedule[idx] === 'Scouting!').length;
           if (scoutCount < MAX_SCOUTS) {
             p.schedule[idx] = 'Scouting!';
+            const otherOfPair = PIT_PAIR_NAMES.includes(p.name)
+              ? people.find((q) => q !== p && PIT_PAIR_NAMES.includes(q.name))
+              : null;
+            if (otherOfPair && otherOfPair.schedule[idx] === 'Open') otherOfPair.schedule[idx] = 'Scouting!';
           }
         }
       }
