@@ -608,6 +608,20 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     });
   }
 
+  const sienna = people.find((q) => q.name === 'Sienna Cooper');
+  const theo = people.find((q) => q.name === 'Theo Fisher');
+  if (sienna && theo && sienna.schedule && theo.schedule) {
+    const fourPmMin = 16 * 60;
+    const fivePmMin = 17 * 60;
+    for (let t = 0; t < numBlocks; t++) {
+      const startMin = blockStartMinutes(timeBlocks[t]);
+      if (startMin >= fourPmMin && startMin < fivePmMin && sienna.schedule[t] === 'Pits') {
+        sienna.schedule[t] = 'Open';
+        theo.schedule[t] = 'Pits';
+      }
+    }
+  }
+
   return people;
 }
 
