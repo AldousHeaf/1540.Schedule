@@ -695,12 +695,23 @@ async function buildSchedule(config) {
     }
   }
 
+  function displayName(name) {
+    if (!name || name.includes('@')) return name;
+    const parts = (name || '').trim().split(/\s+/);
+    if (parts.length < 2) return name;
+    const first = parts[0];
+    const lastInitial = (parts[parts.length - 1] || '').charAt(0).toUpperCase();
+    return lastInitial ? first + ' ' + lastInitial : name;
+  }
+
   bestDays.forEach((day) => {
     (day.people || []).forEach((p) => {
       if (p.name === 'Aryla Bajaj') p.name = 'Mia Yasukawa';
+      p.name = displayName(p.name);
     });
     (day.scoutCheck || []).forEach((c) => {
       if (c.name === 'Aryla Bajaj') c.name = 'Mia Yasukawa';
+      c.name = displayName(c.name);
     });
   });
 
