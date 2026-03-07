@@ -3,7 +3,7 @@ module.exports = {
   'Pits': { min: 2, max: 3 },
   'Ctrls Pit': { min: 1, max: 1 },
   'Pit Lead': { min: 2, max: 2 },
-  Journalist: { min: 0, max: 1 },
+  Journalist: { min: 1, max: 1 },
   Strategy: { min: 3, max: 3 },
-  Media: { min: 0, max: 1 },
+  Media: { min: 1, max: 1 },
 };

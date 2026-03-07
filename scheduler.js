@@ -353,14 +353,10 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes) {
       }
     }
 
-    const journalistBlocks = [];
-    const mid = Math.floor(numBlocks / 2);
-    journalistBlocks.push(mid - 1, mid);
-    journalistBlocks.push(numBlocks - 2, numBlocks - 1);
-    const assignJournalistThisBlock = journalistBlocks.includes(timeIdx);
-    if (assignJournalistThisBlock) {
-      const jMax = getMax('Journalist', timeIdx);
-      assignUpTo('Journalist', Math.max(0, jMax), (_, p) => {
+    const jMin = Math.max(0, getMin('Journalist', timeIdx));
+    const jMax = Math.max(0, getMax('Journalist', timeIdx));
+    if (jMax >= 1) {
+      assignUpTo('Journalist', Math.max(jMin, jMax), (_, p) => {
         const sub = submissions.find((s) => s.email === p.email);
         return sub && sub.wantsJournalism;
       }, true, true);
@@ -379,9 +375,10 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes) {
       return sub && sub.wantsStrategy;
     }, true, true);
 
-    const assignMediaThisBlock = timeIdx % 2 === 0;
-    if (assignMediaThisBlock) {
-      assignUpTo('Media', Math.max(0, getMax('Media', timeIdx)), (_, p) => {
+    const mMin = Math.max(0, getMin('Media', timeIdx));
+    const mMax = Math.max(0, getMax('Media', timeIdx));
+    if (mMax >= 1) {
+      assignUpTo('Media', Math.max(mMin, mMax), (_, p) => {
         const sub = submissions.find((s) => s.email === p.email);
         return sub && sub.wantsMedia;
       }, true, true);
