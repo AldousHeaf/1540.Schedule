@@ -6,8 +6,8 @@ module.exports = {
   competitionStartTime: '09:00',
   competitionEndTime: '16:30',
   blockDurationMinutes: 30,
-  lunchStart: '12:00',
-  lunchEnd: '13:00',
+  lunchStart: '12:00',  // 12-1 = lunch
+  lunchEnd: '13:00',    // 1-2 = scheduled roles
   numberOfDays: 1,
   scheduleDay: 'saturday',
   optimizationIterations: 1,
