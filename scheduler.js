@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const ROLES = ['Drive', 'Pits', 'Ctrls Pit', 'Pit Lead', 'Journalist', 'Strategy', 'Media'];
+const ROLES = ['Drive', 'Pits', 'Pit Lead', 'Journalist', 'Strategy', 'Media'];
 const PIT_LEAD_NAMES = ['Audrey Tsai', 'Zachary Rutman']; // Both Pit Lead all day (not Pits)
 const SCOUT_START_MINUTES = 9 * 60; // Scouting starts at 09:00 (all day except lunch)
 const CANNOT_SCOUT_NAMES = [];
@@ -60,7 +60,7 @@ function evaluateGoodness(people, submissions) {
     score += totalScoutBlocks * 2;
   }
 
-  const balanceRoles = ['Strategy', 'Media', 'Journalist', 'Pits', 'Ctrls Pit', 'Pit Lead'];
+  const balanceRoles = ['Strategy', 'Media', 'Journalist', 'Pits', 'Pit Lead'];
   balanceRoles.forEach((role) => {
     const counts = people
       .map((p) => (p.schedule || []).filter((r) => r === role).length)
@@ -348,13 +348,11 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     };
     const pitsMax = Math.max(0, getMax('Pits', timeIdx));
     assignUpTo('Pits', pitsMax, (_, p) => {
-      if (NO_MECH_PIT_NAMES.includes(p.name)) return false;
+      if (NO_MECH_PIT_NAMES.includes(p.name) && !canCtrlsPit(p)) return false;
       const sub = submissions.find((s) => s.email === p.email);
       const canMech = sub && (sub.wantsPits && sub.wantsMechPit || sub.wantsSwPit || ALLOW_MECH_PIT_NAMES.includes(p.name));
-      return canMech;
+      return canMech || canCtrlsPit(p);
     }, true, true, ['Joseph Cole', 'Aldous Heaf']);
-
-    assignUpTo('Ctrls Pit', Math.max(0, getMax('Ctrls Pit', timeIdx)), (_, p) => canCtrlsPit(p), true, true);
 
     const isPitLead = (p) => PIT_LEAD_NAMES.includes(p.name);
     const pitLeadMax = Math.max(0, getMax('Pit Lead', timeIdx));
