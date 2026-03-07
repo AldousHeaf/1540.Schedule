@@ -410,8 +410,8 @@ function runScheduling(submissions, timeBlocks, req, blockDurationMinutes, lunch
     }
   }
 
-  const MIN_SCOUTS = 8;
-  const MAX_SCOUTS = 8;
+  const MIN_SCOUTS = 0;
+  const MAX_SCOUTS = 0; // no scouting
   const cannotScoutPerson = (p) => {
     if (CANNOT_SCOUT_NAMES.includes(p.name)) return true;
     const sub = submissions.find((s) => s.email === p.email);
