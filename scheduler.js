@@ -705,7 +705,9 @@ async function buildSchedule(config) {
   }
 
   bestDays.forEach((day) => {
+    const numBlocks = (day.timeBlocks || []).length;
     (day.people || []).forEach((p) => {
+      if (p.name === 'Aldous Heaf') p.schedule = new Array(numBlocks).fill('Open');
       if (p.name === 'Aryla Bajaj') p.name = 'Mia Yasukawa';
       p.name = displayName(p.name);
     });
