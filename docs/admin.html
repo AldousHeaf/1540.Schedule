@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>1540 Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hdr">
+    <div class="hdr-in">
+      <span class="hdr-logo">1540</span>
+      <span class="hdr-tag">Admin</span>
+      <a href="index.html" class="hdr-admin">Back to Schedule</a>
+    </div>
+  </header>
+
+  <main class="adm-main">
+    <div class="adm-page">
+      <section class="adm-card">
+        <h2 class="adm-ttl">Roles</h2>
+        <p class="adm-sub">Add and manage available role names.</p>
+        <div class="adm-row">
+          <input class="adm-input" type="text" placeholder="New role name (ex: Awards)">
+          <button class="adm-btn pri" type="button">Add Role</button>
+        </div>
+        <ul class="adm-list">
+          <li><span>Pit Lead</span><span class="adm-tag">Active</span></li>
+          <li><span>Pits</span><span class="adm-tag">Active</span></li>
+          <li><span>Drive</span><span class="adm-tag">Active</span></li>
+          <li><span>Scouting!</span><span class="adm-tag">Active</span></li>
+        </ul>
+      </section>
+
+      <section class="adm-card">
+        <h2 class="adm-ttl">People to Roles</h2>
+        <p class="adm-sub">Assign people to default role pools.</p>
+        <div class="adm-row">
+          <select class="adm-select">
+            <option>Andrew U.</option>
+            <option>Aryla B.</option>
+            <option>Audrey T.</option>
+            <option>Autumn W.</option>
+            <option>Blaze A.</option>
+            <option>Chloe Z.</option>
+            <option>Crow J.</option>
+            <option>Enzo W.</option>
+            <option>Hanya Y.</option>
+            <option>Ian W.</option>
+            <option>Joseph C.</option>
+            <option>Luke S.</option>
+            <option>Maddox G.</option>
+            <option>Meera M.</option>
+            <option>Mia Y.</option>
+            <option>Miranda L.</option>
+            <option>Quinn B.</option>
+            <option>Sienna C.</option>
+            <option>Stone P.</option>
+            <option>Theo F.</option>
+            <option>William B.</option>
+            <option>Alvin Z.</option>
+            <option>David K.</option>
+            <option>Luna G.</option>
+            <option>Sinead H.</option>
+            <option>Zachary R.</option>
+          </select>
+          <select class="adm-select">
+            <option>Pit Lead</option>
+            <option>Pits</option>
+            <option>Drive</option>
+            <option>Scouting!</option>
+            <option>Strategy</option>
+          </select>
+          <button class="adm-btn pri" type="button">Assign</button>
+        </div>
+        <ul class="adm-list">
+          <li><span>Z. Rutman -> Pit Lead</span><button class="adm-btn" type="button">Remove</button></li>
+          <li><span>Luna G. -> Drive</span><button class="adm-btn" type="button">Remove</button></li>
+          <li><span>Autumn W. -> Strategy</span><button class="adm-btn" type="button">Remove</button></li>
+        </ul>
+      </section>
+
+      <section class="adm-card adm-card-wide">
+        <h2 class="adm-ttl">Competition Settings</h2>
+        <p class="adm-sub">Set event day timing windows and lunch breaks.</p>
+        <div class="adm-row">
+          <select class="adm-select">
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+          <input class="adm-input" type="text" value="08:00" aria-label="Competition start time">
+          <input class="adm-input" type="text" value="19:30" aria-label="Competition end time">
+          <input class="adm-input" type="text" value="13:00" aria-label="Lunch start time">
+          <input class="adm-input" type="text" value="14:00" aria-label="Lunch end time">
+          <button class="adm-btn pri" type="button">Save Times</button>
+        </div>
+      </section>
+
+      <section class="adm-card adm-card-wide">
+        <h2 class="adm-ttl">Upload Responses</h2>
+        <p class="adm-sub">Upload the latest form responses CSV before regenerating schedule output.</p>
+        <div class="adm-row">
+          <input class="adm-input" type="text" value="2026 Wilsonville Roles Form (Responses) - Form Responses 1 (1).csv" aria-label="Selected responses file">
+          <button class="adm-btn" type="button">Choose File</button>
+          <button class="adm-btn pri" type="button">Upload Responses</button>
+        </div>
+      </section>
+
+      <section class="adm-card adm-card-wide">
+        <h2 class="adm-ttl">Exceptions</h2>
+        <p class="adm-sub">Track people with constraints like no scouting, day-only, or blocked times.</p>
+        <div class="adm-row">
+          <select class="adm-select">
+            <option>Andrew U.</option>
+            <option>Aryla B.</option>
+            <option>Audrey T.</option>
+            <option>Autumn W.</option>
+            <option>Blaze A.</option>
+            <option>Chloe Z.</option>
+            <option>Crow J.</option>
+            <option>Enzo W.</option>
+            <option>Hanya Y.</option>
+            <option>Ian W.</option>
+            <option>Joseph C.</option>
+            <option>Luke S.</option>
+            <option>Maddox G.</option>
+            <option>Meera M.</option>
+            <option>Mia Y.</option>
+            <option>Miranda L.</option>
+            <option>Quinn B.</option>
+            <option>Sienna C.</option>
+            <option>Stone P.</option>
+            <option>Theo F.</option>
+            <option>William B.</option>
+            <option>Alvin Z.</option>
+            <option>David K.</option>
+            <option>Luna G.</option>
+            <option>Sinead H.</option>
+            <option>Zachary R.</option>
+          </select>
+          <select class="adm-select">
+            <option>Cannot Scout</option>
+            <option>Drive Team</option>
+            <option>Saturday Only</option>
+            <option>Sunday Only</option>
+            <option>Unavailable Time</option>
+          </select>
+          <input class="adm-input" type="text" placeholder="Details (optional)">
+          <button class="adm-btn pri" type="button">Add Exception</button>
+        </div>
+        <table class="adm-table">
+          <thead>
+            <tr><th>Person</th><th>Exception</th><th>Details</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Q. Bartlo</td><td>Cannot Scout</td><td>Permanent</td><td><button class="adm-btn" type="button">Delete</button></td></tr>
+            <tr><td>A. Wilkes</td><td>Sunday Only</td><td>Travel Saturday</td><td><button class="adm-btn" type="button">Delete</button></td></tr>
+            <tr><td>D. Kong</td><td>Drive Team</td><td>All day priority</td><td><button class="adm-btn" type="button">Delete</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

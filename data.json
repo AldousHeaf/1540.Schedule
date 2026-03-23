@@ -1,0 +1,1463 @@
+{
+  "schedule": {
+    "days": [
+      {
+        "day": 1,
+        "label": "Saturday",
+        "timeBlocks": [
+          "08:00-08:30",
+          "08:30-09:00",
+          "09:00-09:30",
+          "09:30-10:00",
+          "10:00-10:30",
+          "10:30-11:00",
+          "11:00-11:30",
+          "11:30-12:00",
+          "12:00-12:30",
+          "12:30-13:00",
+          "14:00-14:30",
+          "14:30-15:00",
+          "15:00-15:30",
+          "15:30-16:00",
+          "16:00-16:30",
+          "16:30-17:00",
+          "17:00-17:30",
+          "17:30-18:00",
+          "18:00-18:30",
+          "18:30-19:00",
+          "19:00-19:30"
+        ],
+        "people": [
+          {
+            "name": "Andrew U.",
+            "email": "andrew uan-zo-li",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Ariv K.",
+            "email": "ariv kapadia-basu",
+            "schedule": [
+              "Open",
+              "Journalist",
+              "Pits",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Scouting!",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Journalist",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Open",
+              "Pits",
+              "Journalist",
+              "Open",
+              "Journalist"
+            ]
+          },
+          {
+            "name": "Aryla B.",
+            "email": "aryla bajaj",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open"
+            ]
+          },
+          {
+            "name": "Audrey T.",
+            "email": "audrey tsai",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Autumn W.",
+            "email": "autumn wilkes",
+            "schedule": [
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Blaze A.",
+            "email": "blaze annison",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Open"
+            ]
+          },
+          {
+            "name": "Chloe Z.",
+            "email": "chloe zhang",
+            "schedule": [
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Crow J.",
+            "email": "crow jahncke",
+            "schedule": [
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Enzo W.",
+            "email": "enzo wouhaybi",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Hanya Y.",
+            "email": "hanya you",
+            "schedule": [
+              "Pits",
+              "Open",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Ian W.",
+            "email": "ian wise",
+            "schedule": [
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits"
+            ]
+          },
+          {
+            "name": "Jay K.",
+            "email": "jay kodithyala",
+            "schedule": [
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Luke S.",
+            "email": "luke steyskal",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Pits"
+            ]
+          },
+          {
+            "name": "Maddox G.",
+            "email": "maddox gumboc",
+            "schedule": [
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Mia Y.",
+            "email": "mia yasukawa",
+            "schedule": [
+              "Journalist",
+              "Open",
+              "Pits",
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Journalist",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Journalist",
+              "Open",
+              "Pits",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Open"
+            ]
+          },
+          {
+            "name": "Quinn B.",
+            "email": "quinn bartlo",
+            "schedule": [
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open"
+            ]
+          },
+          {
+            "name": "Theo F.",
+            "email": "theo fisher",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!"
+            ]
+          },
+          {
+            "name": "Alvin Z.",
+            "email": "alvin zhang",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "David K.",
+            "email": "david kong",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "Luna G.",
+            "email": "luna gonzalez gonzalez",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "Sinead H.",
+            "email": "sinead hough",
+            "schedule": [
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead"
+            ]
+          },
+          {
+            "name": "Zachary R.",
+            "email": "zachary rutman",
+            "schedule": [
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead"
+            ]
+          }
+        ],
+        "scoutCheck": [
+          {
+            "name": "Andrew U.",
+            "scoutingBlocks": 18,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Ariv K.",
+            "scoutingBlocks": 3,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Aryla B.",
+            "scoutingBlocks": 15,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Audrey T.",
+            "scoutingBlocks": 14,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Autumn W.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Blaze A.",
+            "scoutingBlocks": 13,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Chloe Z.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Crow J.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Enzo W.",
+            "scoutingBlocks": 16,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Hanya Y.",
+            "scoutingBlocks": 10,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Ian W.",
+            "scoutingBlocks": 8,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Jay K.",
+            "scoutingBlocks": 12,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Luke S.",
+            "scoutingBlocks": 10,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Maddox G.",
+            "scoutingBlocks": 10,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Mia Y.",
+            "scoutingBlocks": 2,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Quinn B.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Theo F.",
+            "scoutingBlocks": 16,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Alvin Z.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "David K.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Luna G.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Sinead H.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Zachary R.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "label": "Sunday",
+        "timeBlocks": [
+          "08:00-08:30",
+          "08:30-09:00",
+          "09:00-09:30",
+          "09:30-10:00",
+          "10:00-10:30",
+          "10:30-11:00",
+          "11:00-11:30",
+          "12:30-13:00",
+          "13:00-13:30",
+          "13:30-14:00",
+          "14:00-14:30",
+          "14:30-15:00",
+          "15:00-15:30",
+          "15:30-16:00"
+        ],
+        "people": [
+          {
+            "name": "Andrew U.",
+            "email": "andrew uan-zo-li",
+            "schedule": [
+              "Pits",
+              "Open",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open"
+            ]
+          },
+          {
+            "name": "Aryla B.",
+            "email": "aryla bajaj",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Audrey T.",
+            "email": "audrey tsai",
+            "schedule": [
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Autumn W.",
+            "email": "autumn wilkes",
+            "schedule": [
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open"
+            ]
+          },
+          {
+            "name": "Blaze A.",
+            "email": "blaze annison",
+            "schedule": [
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Chloe Z.",
+            "email": "chloe zhang",
+            "schedule": [
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Crow J.",
+            "email": "crow jahncke",
+            "schedule": [
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open"
+            ]
+          },
+          {
+            "name": "Enzo W.",
+            "email": "enzo wouhaybi",
+            "schedule": [
+              "Open",
+              "Pits",
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Hanya Y.",
+            "email": "hanya you",
+            "schedule": [
+              "Pits",
+              "Open",
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Pits"
+            ]
+          },
+          {
+            "name": "Ian W.",
+            "email": "ian wise",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Joseph C.",
+            "email": "joseph cole",
+            "schedule": [
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Pits"
+            ]
+          },
+          {
+            "name": "Luke S.",
+            "email": "luke steyskal",
+            "schedule": [
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Maddox G.",
+            "email": "maddox gumboc",
+            "schedule": [
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Meera M.",
+            "email": "meera mohit",
+            "schedule": [
+              "Scouting!",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Mia Y.",
+            "email": "mia yasukawa",
+            "schedule": [
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open",
+              "Journalist",
+              "Open"
+            ]
+          },
+          {
+            "name": "Miranda L.",
+            "email": "miranda li",
+            "schedule": [
+              "Journalist",
+              "Open",
+              "Scouting!",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open",
+              "Journalist"
+            ]
+          },
+          {
+            "name": "Quinn B.",
+            "email": "quinn bartlo",
+            "schedule": [
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Open",
+              "Strategy",
+              "Strategy"
+            ]
+          },
+          {
+            "name": "Sienna C.",
+            "email": "sienna cooper",
+            "schedule": [
+              "Scouting!",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Pits",
+              "Open"
+            ]
+          },
+          {
+            "name": "Stone P.",
+            "email": "stone perdue",
+            "schedule": [
+              "Open",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Theo F.",
+            "email": "theo fisher",
+            "schedule": [
+              "Open",
+              "Pits",
+              "Open",
+              "Scouting!",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Pits",
+              "Open",
+              "Open",
+              "Open",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "William B.",
+            "email": "william bahm",
+            "schedule": [
+              "Scouting!",
+              "Open",
+              "Journalist",
+              "Open",
+              "Journalist",
+              "Scouting!",
+              "Scouting!",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open",
+              "Journalist",
+              "Open",
+              "Open"
+            ]
+          },
+          {
+            "name": "Alvin Z.",
+            "email": "alvin zhang",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "David K.",
+            "email": "david kong",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "Luna G.",
+            "email": "luna gonzalez gonzalez",
+            "schedule": [
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive",
+              "Drive"
+            ]
+          },
+          {
+            "name": "Sinead H.",
+            "email": "sinead hough",
+            "schedule": [
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead"
+            ]
+          },
+          {
+            "name": "Zachary R.",
+            "email": "zachary rutman",
+            "schedule": [
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead",
+              "Pit Lead"
+            ]
+          }
+        ],
+        "scoutCheck": [
+          {
+            "name": "Andrew U.",
+            "scoutingBlocks": 2,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Aryla B.",
+            "scoutingBlocks": 3,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Audrey T.",
+            "scoutingBlocks": 5,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Autumn W.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Blaze A.",
+            "scoutingBlocks": 2,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Chloe Z.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Crow J.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Enzo W.",
+            "scoutingBlocks": 1,
+            "shouldScout": true,
+            "status": "low"
+          },
+          {
+            "name": "Hanya Y.",
+            "scoutingBlocks": 3,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Ian W.",
+            "scoutingBlocks": 5,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Joseph C.",
+            "scoutingBlocks": 3,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Luke S.",
+            "scoutingBlocks": 4,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Maddox G.",
+            "scoutingBlocks": 5,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Meera M.",
+            "scoutingBlocks": 1,
+            "shouldScout": true,
+            "status": "low"
+          },
+          {
+            "name": "Mia Y.",
+            "scoutingBlocks": 1,
+            "shouldScout": true,
+            "status": "low"
+          },
+          {
+            "name": "Miranda L.",
+            "scoutingBlocks": 1,
+            "shouldScout": true,
+            "status": "low"
+          },
+          {
+            "name": "Quinn B.",
+            "scoutingBlocks": 0,
+            "shouldScout": false,
+            "status": "exempt"
+          },
+          {
+            "name": "Sienna C.",
+            "scoutingBlocks": 4,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Stone P.",
+            "scoutingBlocks": 5,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Theo F.",
+            "scoutingBlocks": 1,
+            "shouldScout": true,
+            "status": "low"
+          },
+          {
+            "name": "William B.",
+            "scoutingBlocks": 3,
+            "shouldScout": true,
+            "status": "ok"
+          },
+          {
+            "name": "Alvin Z.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "David K.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Luna G.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Sinead H.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          },
+          {
+            "name": "Zachary R.",
+            "scoutingBlocks": 0,
+            "shouldScout": true,
+            "status": "none"
+          }
+        ]
+      }
+    ]
+  }
+}

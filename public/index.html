@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>1540 Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hdr">
+    <div class="hdr-in">
+      <span class="hdr-logo">1540</span>
+      <span class="hdr-tag">Schedule</span>
+      <input type="search" id="searchInput" class="hdr-srch" placeholder="Search name…" aria-label="Search">
+      <div class="hdr-view">
+        <button type="button" id="viewTime" class="hdr-view-btn active">By time</button>
+        <button type="button" id="viewPerson" class="hdr-view-btn">By person</button>
+      </div>
+      <a href="admin.html" class="hdr-admin">Admin</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="scheduleContainer" class="sched-wrap"></div>
+  </main>
+
+  <div id="rolePanel" class="pnl hidden" aria-hidden="true">
+    <div class="pnl-in">
+      <button type="button" class="pnl-x" aria-label="Close">×</button>
+      <h2 id="rolePanelTitle" class="pnl-ttl"></h2>
+      <div id="rolePanelBody" class="pnl-bd"></div>
+    </div>
+  </div>
+
+  <script src="schedule.js"></script>
+</body>
+</html>

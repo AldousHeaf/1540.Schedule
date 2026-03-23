@@ -1,0 +1,15 @@
+{
+  "name": "competition-schedule-organizer",
+  "version": "1.0.0",
+  "description": "1540 sched tool",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node build-static.js",
+    "test:smoke": "node tests/config-requirements-smoke.test.js",
+    "deploy": "node build-static.js && git add docs/ schedule.csv && git commit -m \"Update schedule from responses\" || true && git push"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
